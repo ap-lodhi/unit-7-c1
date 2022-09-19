@@ -27,12 +27,12 @@ app.post('/getmeip',(req,res)=>{
 
 
 // Question-2
-// get data
+// get data request
 app.get('/products', (req, res) => {
     return res.status(200).send(prodData);
 });
 
-// Post Data
+// Post Data request
 app.post('/products/create',(req,res) => {
     var data = req.body;
     prodData.push(data)
@@ -42,7 +42,7 @@ app.post('/products/create',(req,res) => {
     return res.send('product added')
 })
 
-// Delete data
+// Delete data request
 app.delete('/products/:productId',(req,res)=>{
     const { productId } = req.params;
     console.log("id",productId)
@@ -60,7 +60,7 @@ app.delete('/products/:productId',(req,res)=>{
 })
 
 
-// update
+// update request
 app.put('/products/:productId', (req, res) => {
     let id = req.params.productId;
     let index = prodData.findIndex(product => product.id == id);
